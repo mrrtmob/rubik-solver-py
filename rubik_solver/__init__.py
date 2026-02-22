@@ -28,6 +28,6 @@ __all__ = [
     "scramble",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__  = "Tmob"
 __license__ = "MIT"
