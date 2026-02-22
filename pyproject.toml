@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rubik-solver-py"
+version = "0.1.0"
+description = "A Python implementation of Kociemba's two-phase algorithm for solving the Rubik's Cube"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "rubik-solver-py contributors" },
+]
+keywords = [
+    "rubik", "cube", "solver", "kociemba", "two-phase", "puzzle",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment :: Puzzle Games",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+requires-python = ">=3.8"
+dependencies = ["numpy>=1.21"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "build",
+    "twine",
+]
+
+[project.urls]
+Homepage       = "https://github.com/mrrtmob/rubik-solver-py"
+Repository     = "https://github.com/mrrtmob/rubik-solver-py"
+Documentation  = "https://github.com/mrrtmob/rubik-solver-py#readme"
+"Bug Tracker"  = "https://github.com/mrrtmob/rubik-solver-py/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["rubik_solver"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "rubik_solver/**/*.py",
+    "tests/**/*.py",
+    "README.md",
+    "LICENSE",
+    "pyproject.toml",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts   = "-v"
