@@ -187,22 +187,6 @@ init_solver(verbose=True)  # prints progress
 > The disk cache makes the difference negligible in practice — after the first run
 > startup is ~15 ms regardless.
 
-## Publishing to PyPI
-
-```bash
-# Install build tools
-pip install build twine
-
-# Build the package
-python -m build
-
-# Upload to TestPyPI first (recommended)
-twine upload --repository testpypi dist/*
-
-# Upload to PyPI
-twine upload dist/*
-```
-
 ## License
 
 MIT
